@@ -111,3 +111,29 @@ pre code {
 .lead {
     font-size: 17px;
 }
+
+/* Вертикальный ритм внутри поста: одинаковые промежутки между блоками */
+.post > * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.post > * + * {
+    margin-top: 1em;
+}
+
+.post h2 {
+    margin-top: 1.6em;
+}
+
+.post blockquote {
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 1em;
+    border-left: 2px solid #333;
+    color: #b9c2bd;
+}
+
+.post pre {
+    margin: 0;
+}

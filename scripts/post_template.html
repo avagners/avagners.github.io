@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 
-<!--
-  Шаблон поста. Перед публикацией:
-  - переименуйте файл в posts/ГГГГ-ММ-ДД-короткий-адрес.html
-  - заполните <title>, дату, заголовок и текст
-  - добавьте ссылку на пост в posts.html
--->
 <html lang="ru">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Заголовок поста // Александр Вагнер</title>
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../styles.css">
+    <title>{{TITLE}} // Александр Вагнер</title>
+    <meta name="description" content="{{SUMMARY}}">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
@@ -36,13 +31,9 @@
 
 <main>
     <article class="post">
-        <p class="post-date"><time datetime="2026-11-10">10 ноября 2026</time></p>
-        <h1>Заголовок поста</h1>
-
-        <p>Первый абзац.</p>
-        <p>Второй абзац. Код оформляется так: <code>SELECT 1</code>, блок кода — через
-            <code>&lt;pre&gt;&lt;code&gt;</code>.</p>
-
+        <p class="post-date"><time datetime="{{DATE_ISO}}">{{DATE_HUMAN}}</time></p>
+        <h1>{{TITLE}}</h1>
+{{CONTENT}}
         <p><a href="/posts.html">← ко всем постам</a></p>
     </article>
 </main>
