@@ -137,3 +137,9 @@ pre code {
 .post pre {
     margin: 0;
 }
+
+.site-version {
+    margin-top: 0.75em;
+    color: #666;
+    font-size: 13px;
+}

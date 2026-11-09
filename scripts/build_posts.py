@@ -28,6 +28,15 @@ TEMPLATE = SITE / "scripts" / "post_template.html"
 POSTS_DIR = SITE / "posts"
 INDEX = SITE / "posts.html"
 BASE_URL = "https://avagners.github.io"
+VERSION_FILE = SITE / "VERSION"
+
+
+def site_version() -> str:
+    """Версия сайта из файла VERSION — попадает в подвал страниц постов."""
+    try:
+        return VERSION_FILE.read_text(encoding="utf-8").strip() or "0.0.0"
+    except FileNotFoundError:
+        return "0.0.0"
 
 MONTHS = (
     "января", "февраля", "марта", "апреля", "мая", "июня",
@@ -213,6 +222,7 @@ def build(vault: Path, dry_run: bool = False) -> int:
             .replace("{{DATE_ISO}}", d.isoformat())
             .replace("{{DATE_HUMAN}}", f"{d.day} {MONTHS[d.month - 1]} {d.year}")
             .replace("{{URL}}", f"{BASE_URL}/posts/{slug}.html")
+            .replace("{{VERSION}}", site_version())
             .replace("{{CONTENT}}", content)
         )
 
