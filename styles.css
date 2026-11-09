@@ -51,3 +51,63 @@ code, dt {
 nav {
     font-size: 17px;
 }
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 2em 0;
+}
+
+.post-list li {
+    margin-bottom: 1.75em;
+}
+
+.post-list time,
+.post-date {
+    display: block;
+    color: #888;
+    font-size: 14px;
+}
+
+.post-list a {
+    font-size: 17px;
+}
+
+.post-list p {
+    margin: 0.25em 0 0 0;
+}
+
+.post h1 {
+    margin-bottom: 0.25em;
+}
+
+.post-date {
+    margin: 0;
+}
+
+pre {
+    background: #1b2126;
+    border: 1px solid #333;
+    padding: 1em;
+    overflow-x: auto;
+}
+
+pre code {
+    color: #cdd6cf;
+}
+
+.muted {
+    color: #888;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 0.5em;
+}
+
+.lead {
+    font-size: 17px;
+}
