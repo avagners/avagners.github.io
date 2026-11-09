@@ -5,11 +5,21 @@ body {
     padding: 1em;
     max-width: 50em;
     font: 16px monospace;
+    box-sizing: border-box;
+    min-height: calc(100vh - 2em);
+    display: flex;
+    flex-direction: column;
+}
+
+/* main растягивается, поэтому подвал прижат к низу даже на коротких страницах */
+main {
+    flex: 1 0 auto;
 }
 
 footer {
     clear: both;
     margin-top: 3em;
+    flex-shrink: 0;
 }
 
 a {
