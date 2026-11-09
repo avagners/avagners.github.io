@@ -27,6 +27,7 @@ SITE = Path(__file__).resolve().parent.parent
 TEMPLATE = SITE / "scripts" / "post_template.html"
 POSTS_DIR = SITE / "posts"
 INDEX = SITE / "posts.html"
+BASE_URL = "https://avagners.github.io"
 
 MONTHS = (
     "января", "февраля", "марта", "апреля", "мая", "июня",
@@ -211,6 +212,7 @@ def build(vault: Path, dry_run: bool = False) -> int:
             .replace("{{SUMMARY}}", html.escape(summary))
             .replace("{{DATE_ISO}}", d.isoformat())
             .replace("{{DATE_HUMAN}}", f"{d.day} {MONTHS[d.month - 1]} {d.year}")
+            .replace("{{URL}}", f"{BASE_URL}/posts/{slug}.html")
             .replace("{{CONTENT}}", content)
         )
 
