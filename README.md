@@ -24,6 +24,19 @@
 У каждой заметки в начале файла служебные поля: `title`, `date`, `slug`,
 `summary`, `tags`, `status`. На сайт попадают только `status: готово`.
 
+### Новый пост
+
+```bash
+python3 scripts/new_post.py "Заголовок поста" --summary "О чём это" --tags код
+python3 scripts/new_post.py "Заголовок" --open    # сразу открыть в Obsidian
+```
+
+Скрипт создаёт `~/Obsidian/Блог/ГГГГ-ММ-ДД-slug.md` с заполненным frontmatter
+(дата, адрес, статус `черновик`) и каркасом текста.
+
+В самом Obsidian работает ядровый плагин «Шаблоны»: `Ctrl/Cmd+P` →
+«Шаблоны: Вставить шаблон» → `Пост`. Папка шаблонов — `Блог/_шаблоны`.
+
 ```bash
 python3 scripts/build_posts.py            # Markdown → posts/*.html + список
 python3 scripts/build_posts.py --dry-run  # показать, что попадёт
